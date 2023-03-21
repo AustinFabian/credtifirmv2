@@ -1,0 +1,29 @@
+doctype html
+head
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  include _style
+span.preheader
+table.body(role='presentation', border='0', cellpadding='0', cellspacing='0')
+  tr
+    td &nbsp;
+    td.container
+      .content
+        table.main(role='presentation')
+          tr
+            td.wrapper
+              table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                tr
+                  td
+                    p 
+                        |  Hello #{login} Your #{account} has been activated now you can perform transactions\
+                        br
+                        | Your account Number is #{accountNumber}
+                        |
+                        br
+                        | Enjoy your use #{login},Best regards,
+                        |
+                        br
+                        a(href=``, target='_blank') credit-firm.com 
+                        | team
+                    
