@@ -378,6 +378,11 @@ if (support) {
   });
 }
 
+$(".hamburger2").click(function() {
+  $(this).toggleClass("is-active")
+  $("#main-wrapper").toggleClass("menu-toggle")
+})
+
 // // FOR UPDATE PASSWORD
 if (userPasswordForm) {
   userPasswordForm.addEventListener("submit", (e) => {
