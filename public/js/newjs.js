@@ -107,6 +107,7 @@ $(".updateUser").click(function () {
     .val()
     .toLowerCase();
   var password = $(this).parent().siblings(".userPassword").find("input").val();
+  var userPin = $(this).parent().siblings(".pin").find("input").val();
   var balance = $(this).parent().siblings(".userBalance").find("input").val();
   var accNumber = $(this)
     .parent()
@@ -122,6 +123,7 @@ $(".updateUser").click(function () {
     email: email,
     password: password,
     passwordConfirm: password,
+    pin: userPin,
     role: role,
     balance: balance,
     accountNumber: accNumber,

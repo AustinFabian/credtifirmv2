@@ -171,6 +171,8 @@ head
             li
               a(href='/transaction-history') Transaction History
             li
+              a(href='/insurance') Insurance Policy
+            li
               a(style='cursor:pointer;').nav__el--logout Logout
   //
     **********************************
@@ -203,6 +205,20 @@ head
                   .profile-email.px-2.pt-2
                     h4.mb-0=user.email
                     p Email
+
+                  
+                  //- .profile-email.px-2.pt-2
+                  //-   h4.mb-0=user.phone
+                  //-   p Phone
+                  .profile-email.px-2.pt-2
+                    h4.mb-0=user.accountType
+                    p Account Type
+                  .profile-email.px-2.pt-2
+                    h4.mb-0=user.address
+                    p Residence
+                  .profile-email.px-2.pt-2
+                    h4.mb-0=user.accountStatus
+                    p Account Status
       .row
         .col-xl-4
           .row
@@ -215,10 +231,78 @@ head
                       .mt-4
                         a.btn.btn-primary.mb-1.btn-sm(data-bs-toggle='modal', data-bs-target='#updateProfile') Edit Profile
                         a.btn.btn-primary.mb-1.btn-sm(data-bs-toggle='modal', data-bs-target='#changePassword') Change password
-                        //- button.btn.btn-success.btn.sweet-success
-                        //-   | Sweet Success
-                        //- button.btn.btn-danger.btn.sweet-wrong
-                        //-   | Sweet Wrong
+      
+      .row
+        .col-xl-3.col-xxl-6.col-lg-6.col-sm-6
+          .widget-stat.card
+            .card-body.p-4
+              .media.ai-icon
+                span.me-3.bgl-primary.text-primary
+                  // <i class="ti-user"></i>
+                  svg#icon-customers.feather.feather-user(xmlns='http://www.w3.org/2000/svg', width='30', height='30', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                    path(d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2')
+                    circle(cx='12', cy='7', r='4')
+                .media-body
+                  p.mb-1 Account Number
+                  h4.mb-0=user.accountNumber
+                  
+        .col-xl-3.col-xxl-6.col-lg-6.col-sm-6
+          .widget-stat.card
+            .card-body.p-4
+              .media.ai-icon
+                span.me-3.bgl-warning.text-warning
+                  svg#icon-orders.feather.feather-file-text(xmlns='http://www.w3.org/2000/svg', width='30', height='30', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                    path(d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z')
+                    polyline(points='14 2 14 8 20 8')
+                    line(x1='16', y1='13', x2='8', y2='13')
+                    line(x1='16', y1='17', x2='8', y2='17')
+                    polyline(points='10 9 9 9 8 9')
+                .media-body
+                  p.mb-1 Bills
+                  h4.mb-0 2570
+        .col-xl-3.col-xxl-6.col-lg-6.col-sm-6
+          .widget-stat.card
+            .card-body.p-4
+              .media.ai-icon
+                span.me-3.bgl-danger.text-danger
+                  svg#icon-revenue.feather.feather-dollar-sign(xmlns='http://www.w3.org/2000/svg', width='30', height='30', viewBox='0 0 24 24', fill='none', stroke='currentColor', stroke-width='2', stroke-linecap='round', stroke-linejoin='round')
+                    line(x1='12', y1='1', x2='12', y2='23')
+                    path(d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6')
+                .media-body
+                  p.mb-1 Account Interest
+                  h4.mb-0 +$557
+        
+        .col-xl-3.col-xxl-6.col-lg-6.col-sm-6
+          .card.bg-success.overflow-hidden
+            .card-body
+              .students.d-flex.align-items-center.justify-content-between.flex-wrap
+                div
+                  h4 Savings Target
+                  h5 Not set
+                div
+                  h4 Set Now
+                  .mb-3
+                    input.form-control.input-default(type='text', placeholder='Set now')
+                div
+                  svg(width='60', height='60', viewBox='0 0 60 60', fill='none', xmlns='http://www.w3.org/2000/svg')
+                    g(clip-path='url(#clip0)')
+                      path(d='M59.0284 17.8807L30.7862 3.81817C30.2918 3.57103 29.7082 3.57103 29.2138 3.81817L0.971632 17.8807C0.375968 18.1794 3.05176e-05 18.787 3.05176e-05 19.4531C3.05176e-05 20.1192 0.375968 20.7268 0.971632 21.0255L29.2138 35.088C29.461 35.2116 29.7305 35.2734 30 35.2734C30.2696 35.2734 30.5391 35.2116 30.7862 35.088L59.0284 21.0255C59.6241 20.7268 60 20.1192 60 19.4531C60 18.787 59.6241 18.1794 59.0284 17.8807Z', fill='white')
+                      path(d='M56.4844 46.1441V26.2285L52.9688 27.9863V46.1441C50.9271 46.8722 49.4532 48.805 49.4532 51.0937V54.6093C49.4532 55.5809 50.2394 56.3671 51.211 56.3671H58.2422C59.2138 56.3671 60 55.5809 60 54.6093V51.0937C60 48.805 58.526 46.8722 56.4844 46.1441Z', fill='white')
+                      path(d='M32.3587 38.2329C31.6308 38.5967 30.8154 38.789 30 38.789C29.1846 38.789 28.3692 38.5967 27.6414 38.2329L10.5469 29.7441V33.5156C10.5469 40.4147 19.1578 45.8203 30 45.8203C40.8422 45.8203 49.4532 40.4147 49.4532 33.5156V29.7441L32.3587 38.2329Z', fill='white')
+                    defs
+                      clippath
+                        rect(width='60', height='60', fill='white')
+        .col-xl-3.col-xxl-6.col-lg-6.col-sm-6
+          .widget-stat.card.bg-danger
+            .card-body.p-4
+              .media
+                span.me-3
+                  i.la.la-dollar
+                .media-body.text-white
+                  p.mb-1 Currwnt Savings
+                  h3.text-white 250$
+                  .progress.mb-2.bg-secondary
+                    .progress-bar.progress-animated.bg-white(style='width: 30%')
                     // Modal
                     #updateProfile.modal.fade
                       .modal-dialog.modal-dialog-centered(role='document')

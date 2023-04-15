@@ -149,6 +149,12 @@ exports.getOrderCard = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getInsurancePolicy = catchAsync(async (req, res, next) => {
+  res.status(200).render("insurance", {
+    
+  });
+});
+
 exports.getInternational = catchAsync(async (req, res, next) => {
 
   var balance = req.user.balance;

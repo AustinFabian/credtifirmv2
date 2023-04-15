@@ -42,6 +42,12 @@ router.get(
 );
 
 router.get(
+  "/insurance",
+  authController.isLoggedIn,
+  viewController.getInsurancePolicy
+);
+
+router.get(
   "/international",
   authController.isLoggedIn,
   viewController.getInternational
