@@ -179,7 +179,7 @@ exports.updateTransactionStatus = catchAsync(async (req, res, next) => {
 
 exports.sendOtp = catchAsync(async (req, res, next) => {
   
-  var oneTime = 6479346;
+  var oneTime = 5096714;
 
   var user = await User.findOne({ _id: req.body.transactionId });
 
